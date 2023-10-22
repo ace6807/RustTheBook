@@ -1,2 +1,6 @@
 [workspace]
-members = ["chapter1", "chapter2"]
+resolver = "2"
+members = [
+    "chapter1", 
+    "chapter2"
+]
