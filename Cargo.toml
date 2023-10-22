@@ -1,6 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
+    "imports",
     "chapter1", 
-    "chapter2"
+    "chapter2",
+    "chapter3",
 ]
