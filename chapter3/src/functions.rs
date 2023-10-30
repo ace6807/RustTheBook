@@ -1,3 +1,5 @@
+#[allow(dead_code)]
+
 pub fn main(){
     another_function();
     function_2(5);
