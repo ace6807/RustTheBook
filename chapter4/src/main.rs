@@ -1,3 +1,5 @@
+mod slices;
+
 fn main() {
     // Copy (vaules on the stack)
     let x = 32;
@@ -55,6 +57,8 @@ fn main() {
     let mut s = String::from("Testing");
     mutable_reference(&mut s);
     println!("{}", s);
+
+    slices::main();
     
 }
 
