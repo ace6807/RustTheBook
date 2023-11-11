@@ -32,3 +32,51 @@ pub fn access_vectors(){
     let r = &v[1..3]; // This is a slice using a range
     println!("{:?}", r);
 }
+
+pub fn altering_vectors(){
+    let mut v = vec![1, 2, 3, 4, 5];
+
+    let mut a = &v[0];
+    v.push(6);
+    // println!("{:?}", a); // This will panic because we are borrowing a reference to v and then mutating v
+}
+
+pub fn iterating_over_vectors() {
+    let v = vec![21, 333, 1121];
+    print_vector(&v);
+
+    let mut v3 = vec![1, 2, 3, 4, 5];
+    increment_vector(&mut v3, 50);
+    println!("{:?}", v3);
+}
+
+pub fn print_vector(v: &Vec<i32>) {
+    println!("Printing vector");
+    for i in v {
+        println!("{}", i);
+    }
+    println!("Done printing vector");
+}
+
+pub fn increment_vector(v: &mut Vec<i32>, inc: i32) {
+    for i in v {
+        *i += inc;
+    }
+}
+
+pub fn different_types() {
+    #[derive(Debug)]
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+    
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    println!("{:?}", row);
+}
